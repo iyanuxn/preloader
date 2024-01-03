@@ -25,7 +25,7 @@ const App = () => {
     };
 
     if (document.readyState === "complete") {
-      setLoading(true)
+      setLoading(true);
       handleLoading();
     } else {
       setLoading(true);
