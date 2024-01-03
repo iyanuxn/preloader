@@ -19,13 +19,14 @@ const App = () => {
 
   useEffect(() => {
     const handleLoading = () => {
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
     };
 
     if (document.readyState === "complete") {
-      setTimeout(() => {
-        setLoading(false);
-      }, 2000);
+      setLoading(true)
+      handleLoading();
     } else {
       setLoading(true);
       document.addEventListener("readystatechange", handleLoading);
