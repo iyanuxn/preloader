@@ -23,7 +23,9 @@ const App = () => {
     };
 
     if (document.readyState === "complete") {
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
     } else {
       setLoading(true);
       document.addEventListener("readystatechange", handleLoading);
@@ -76,11 +78,11 @@ const App = () => {
           Preferably set to full screen
         </span>
       </div>
-      <div className="w-screen absolute flex flex-col mt-44 justify-center items-center font-semibold text-white">
-        <span className="text-[5rem] leading-[6rem]">
+      <div className="w-screen absolute flex flex-col mt-16 md:mt-44 justify-center items-center font-semibold text-white">
+        <span className="md:text-[5rem] md:leading-[6rem] text-4xl leading-[3rem]">
           {time.toLocaleTimeString([], timeSettings)}
         </span>
-        <span className="text-sm">
+        <span className="md:text-sm text-xs">
           {date.toLocaleDateString([], dateSettings)}
         </span>
       </div>
